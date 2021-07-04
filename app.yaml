@@ -5,16 +5,55 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+  - url: /favicon\.ico
+    static_files: favicon.ico
+    upload: favicon\.ico
 
-- url: .*
-  script: main.app
+  - url: /templates
+    static_dir: templates
+    application_readable: true
+
+  - url: /showBook/.+
+    script: handlers.books.showBook.app
+    login: required
+
+  - url: /books
+    script: handlers.books.listBook.app
+    login: required
+
+  - url: /addBook
+    script: handlers.books.addBook.app
+    login: required
+
+  - url: /addComment
+    script: handlers.comments.addComment.app
+    login: required
+
+  - url: /addBookList
+    script: handlers.mylist.addBookList.app
+    login: required
+
+  - url: /showBookList
+    script: handlers.mylist.showBookList.app
+    login: required
+
+  - url: /error
+    script: handlers.error.app
+
+  - url: /
+    script: handlers.welcome.app
+
+
+
+
+
+
+
+
 
 libraries:
-- name: webapp2
-  version: "2.5.2"
+  - name: webapp2
+    version: "2.5.2"
 
-- name: jinja2
-  version: "latest"
+  - name: jinja2
+    version: "latest"

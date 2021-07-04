@@ -1,0 +1,100 @@
+{% extends "main.html" %}
+{% block content %}
+<div id="">
+    <div class="container col-12">
+        <div class="row" style=" justify-content: center;color: white; ">
+            <div class="col-md-6 col-12 d-flex align-items-center justify-content-center">
+                <form class="col-10 mt-5 mb-5" id="newBook"
+                      method="post"
+                      enctype="multipart/form-data"
+                      action="/addBook">
+                    <div class="mb-4">
+                        <h1 class="title"><b>Add a book!</b></h1>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-image" viewBox="0 0 16 16">
+  <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+  <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm13 1a.5.5 0 0 1 .5.5v6l-3.775-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12v.54A.505.505 0 0 1 1 12.5v-9a.5.5 0 0 1 .5-.5h13z"/>
+</svg>
+                        </span>
+                        <button type="button" class="input100 spanAddBook" style="color: white;" data-toggle="modal"
+                                data-target="#exampleModal">Add an image
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Select an image</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="file" class="form-control-file" name="image" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                 class="bi bi-upc" viewBox="0 0 16 16">
+  <path d="M3 4.5a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7zm2 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-7zm3 0a.5.5 0 0 1 1 0v7a.5.5 0 0 1-1 0v-7z"/>
+</svg>
+                        </span>
+                        <input type="text" class="input100" placeholder="ISBN" name="isbn" required>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4"><i
+                                class="fas fa-heading fa-stack-2x fa-inverse"></i></span>
+                        <input type="text" class="input100" placeholder="Title" name="title" required>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4"><i
+                                class="fas fa-pencil-alt fa-stack-2x fa-inverse"></i></span>
+                        <textarea type="text" name="description" class="input100" placeholder="Description"
+                                  required></textarea>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4"><i
+                                class="fas fa-user fa-stack-2x fa-inverse"></i></span>
+                        <input type="text" name="author" class="input100" placeholder="Author" required>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4"><i
+                                class="fas fa-user fa-stack-2x fa-inverse"></i></span>
+                        <input type="text" name="publisher" class="input100" placeholder="Publisher" required>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <span class="fa-stack spanAddBook d-flex align-items-center ml-4"><i
+                                class="fas fa-hourglass-half fa-stack-2x fa-inverse"></i></span>
+                        <input type="number" name="year" class="input100" placeholder="Year" min="1895" max="2021"
+                               required>
+                    </div>
+
+
+                    <div class="container-login100-form-btn mt-5">
+                        <button type="submit" class="login100-form-btn createBook">Add</button>
+                    </div>
+                    <div class="container-login100-form-btn mt-2">
+                        <button type="button" onclick="window.location.href = '/books';" class="login100-form-btn back">
+                            Go back
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

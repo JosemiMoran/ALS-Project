@@ -1,0 +1,116 @@
+:root {
+  --color-red: #ec1840;
+  --color-purple: #7a18ec;
+  --color-white: #fff;
+  --color-black-1: #111;
+  --color-black-2: #222;
+  --color-black-3: #444;
+  --speed-normal: 0.5s;
+  --speed-fast: 0.8s;
+}
+
+@font-face {
+  font-family: 'StoneWalls';
+  src: url('../fonts/StoneWalls.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.3) 0%, rgba(22, 22, 22, 0.7) 75%, #161616 100%), url("../img/cyberpunk_room.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.masthead h1 {
+  font-family: 'StoneWalls', sans-serif;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+}
+
+.masthead h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .masthead h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .masthead h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+body,html{
+  height: 100%;
+}
+
+.button2 {
+  font-family: 'StoneWalls' , sans-serif;
+  position: relative;
+  line-height: 60px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+  trasnition: var(--speed-normal);
+  border: 1px solid var(--color-red);
+}
+.button2:hover {
+  border: 1px solid transparent;
+  background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png);
+  transition-delay: 0.8s;
+  background-size: 180px;
+  -webkit-animation: animate var(--speed-fast) steps(8) forwards;
+          animation: animate var(--speed-fast) steps(8) forwards;
+}
+.button2:last-of-type {
+  border: 1px solid var(--color-purple);
+}
+.button2:last-of-type:hover {
+  background: var(--color-purple) url(https://i.postimg.cc/FzBWFtKM/pixel2.png);
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -480px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -480px;
+  }
+}

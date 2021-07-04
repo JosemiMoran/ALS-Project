@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CyberBooks</title>
+    <!--Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f8a8c8a219.js" crossorigin="anonymous"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            crossorigin="anonymous"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/templates/assets/css/style.css">
+</head>
+<body>
+<div class="page-header">
+    <div class="logo-header">
+        <div class="vertical-align-containers">
+            <div class="position-center">
+                <div style="display: inline-block; vertical-align: middle;">
+                    <div style="display: inline-block; vertical-align: middle;">
+                        <span style="position: relative; top: 18px; font-size: 55px; overflow: hidden;font-weight: 400;color: white">CYBERBOOKS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-container">
+        <div class="vertical-align-containers">
+            <div class="position-center">
+                <div style="height: 100%;display: inline-block;vertical-align: middle;">
+                    <nav class="main-menu" id="start">
+                        <ul>
+                            {% if usr %}
+                            <li data-toggle="tooltip" data-placement="auto"
+                                title="Create Book">
+                                <a href="/addBook">ADD A BOOK</a>
+                            </li>
+                            {% if not book_list %}
+                            <li data-toggle="tooltip" data-placement="auto"
+                                title="My BookList">
+                                <a href="/showBookList">MY LIST</a>
+                            </li>
+                            {% endif %}
+
+                            {% if not bookList %}
+                            <li data-toggle="tooltip" data-placement="auto"
+                                title="All books">
+                                <a href="/books">ALL BOOKS</a>
+                            </li>
+                            {% endif %}
+
+                            <li data-toggle="tooltip" data-placement="auto" title="Logout">
+                                <a href="{{ url_usr }}">LOG OUT</i></a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a href="{{ url_usr }}" class="login">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% block content %}
+{% endblock %}
+
+<!--<footer class="">
+    <div class="row mt-5">
+        <div class="col-sm-6 ">
+            <h1>What is CINEMA?</h1>
+            <p>FAQ
+                <br>About Us
+                <br>Terms of Use</p>
+        </div>
+        <div class="col-sm-6 mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="https://www.instagram.com/" target="_blank"><span
+                            class="app fa fa-3x fa-fw fa-instagram"></span></a>
+                    <a href="https://twitter.com/" target="_blank"><span
+                            class="app fa fa-3x fa-fw fa-twitter"></span></a>
+                    <a href="https://www.facebook.com/" target="_blank"><span
+                            class="app fa fa-3x fa-fw fa-facebook"></span></a>
+                    <a href="https://github.com/" target="_blank"><span class="app fa fa-3x fa-fw fa-github"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="float-right">
+        <a href="#start" id="back">Back to top</a>
+    </p>
+</footer>-->
+</body>
+</html>

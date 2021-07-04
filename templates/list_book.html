@@ -1,0 +1,69 @@
+{% extends "main.html" %}
+{% block content %}
+    {% if books.count() > 0  %}
+    <div>
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    {% if book_list %}
+                        {% for book in books %}
+                            {% if book.key.urlsafe() in key_mybook %}
+                            <div class="col-md-4">
+                                <div class="card mb-4 box-shadow">
+                                    <img class="card-img-top eventImage" alt="BookImage" width="300" height="300"
+                                         src="data:image/png;base64,{{book.image.encode('base64')}}"
+                                         data-holder-rendered="true">
+                                    <div class="card-body">
+                                        <h3 class="text-center">{{ book.title }}</h3>
+                                        <p class="card-text text-center">{{ book.description }}</p>
+                                        <p><u>ISBN:</u> {{ book.isbn }}</p>
+                                        <p><u>Author:</u> {{ book.author }}</p>
+                                        <p><u>Year:</u> {{ book.year }}</p>
+
+                                        <div class="d-flex justify-content-end align-items-center">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary"
+                                                    onclick="window.location.href = '/showBook/{{book.key.urlsafe()}}';">View
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        {% for book in books %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img class="card-img-top eventImage" alt="BookImage"
+                                     src="data:image/png;base64,{{book.image.encode('base64')}}"
+                                     data-holder-rendered="true">
+                                <div class="card-body">
+                                    <h3 class="text-center">{{ book.title }}</h3>
+                                    <p class="card-text text-center">{{ book.description }}</p>
+                                    <p><u>ISBN:</u> {{ book.isbn }}</p>
+                                    <p><u>Author:</u> {{ book.author }}</p>
+                                    <p><u>Year:</u> {{ book.year }}</p>
+
+                                    <div class="d-flex justify-content-end align-items-center">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"
+                                                onclick="window.location.href = '/showBook/{{book.key.urlsafe()}}';">View
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div id="listBook">
+        <div id="noBook" class="d-flex justify-content-center align-items-center col-12 mt-5 mb-5">
+            <h3>We are sorry, but you can add a book with + icon</h3>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+
