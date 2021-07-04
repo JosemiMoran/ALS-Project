@@ -138,6 +138,7 @@ body, html, main {
 #noBook {
     height: 100% !important;
     text-align: center;
+    color: white;
 }
 
 #listBook {
@@ -167,6 +168,10 @@ footer {
     background-color: #111111;
     padding: 1% 10% 3%;
     color: white;
+}
+
+footer span:hover{
+    color: #ec4e00;
 }
 
 .app {
@@ -464,28 +469,16 @@ input.input100 {
 }
 
 
-#category {
-    color: #b91400;
+#author {
+    color: #ec4e00;
 }
 
-#creator {
-    color: #fdd835;
+#isbn {
+    color: #ec4e00;
 }
 
 #date {
-    color: #039be5;
-}
-
-#location {
-    color: #43a047;
-}
-
-#attendants {
-    color: #fb8c00;
-}
-
-#duration {
-    color: #8e24aa;
+    color: #ec4e00;
 }
 
 .commentsBook {

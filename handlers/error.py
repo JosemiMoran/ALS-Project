@@ -14,11 +14,9 @@ class ErrorHandler(webapp2.RequestHandler):
         if usr and user:
             url_usr = users.create_logout_url("/")
             message = self.request.GET["message"]
-            url = self.request.GET["url"]
 
             template_values = {
                 "message": message,
-                "url": url,
                 "usr": usr,
                 "user": user,
                 "url_usr": url_usr
