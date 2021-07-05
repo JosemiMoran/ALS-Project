@@ -1,3 +1,5 @@
+# (c) 2018 Baltasar MIT License <baltasarq@gmail.com>
+# Implements an enum, missing in Python 2.7
 class Enum:
     def __init__(self, values, start=None, default=None):
         """Creates a new Enum by accepting a dictionary
